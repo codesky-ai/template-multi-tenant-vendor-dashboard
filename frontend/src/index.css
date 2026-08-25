@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Arabic Font Support and RTL Styles */
+:root {
+  font-family: 'Cairo', 'Noto Sans Arabic', 'Amiri', system-ui, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  direction: rtl;
+
+  color-scheme: light dark;
+  color: rgba(17, 24, 39, 1);
+  background-color: rgba(249, 250, 251, 1);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  /* Arabic text rendering features */
+  font-feature-settings: "rlig", "calt", "liga", "kern", "arab";
+}
+
+html {
+  direction: rtl;
+  lang: ar;
+}
+
+body {
+  margin: 0;
+  direction: rtl;
+  text-align: right;
+  font-family: 'Cairo', 'Noto Sans Arabic', 'Amiri', system-ui, sans-serif;
+}
+
+/* RTL Support Classes */
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.font-arabic {
+  font-family: 'Cairo', 'Noto Sans Arabic', 'Amiri', system-ui, sans-serif;
+  text-align: right;
+  direction: rtl;
+}
+
+/* Custom RTL utilities */
+.me-auto {
+  margin-inline-end: auto;
+}
+
+.ms-auto {
+  margin-inline-start: auto;
+}
+
+.pe-4 {
+  padding-inline-end: 1rem;
+}
+
+.ps-4 {
+  padding-inline-start: 1rem;
+}
+
+/* Button and Form RTL adjustments */
+button, input, select, textarea {
+  font-family: 'Cairo', 'Noto Sans Arabic', system-ui, sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+/* Table RTL support */
+table {
+  direction: rtl;
+}
+
+th, td {
+  text-align: right;
+}
+
+/* Card and container styles */
+.card {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+}
+
+/* Loading and animation styles */
+.loading {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #e5e7eb;
+    background-color: #1f2937;
+  }
+}
+
+/* Responsive text */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
